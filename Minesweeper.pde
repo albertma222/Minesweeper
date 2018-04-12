@@ -2,9 +2,9 @@
 import de.bezier.guido.*;
 public final static int NUM_ROWS = 20;
 public final static int NUM_COLS = 20;
-public final static int NUM_BOMBS = NUM_ROWS*NUM_COLS/40;
-String winMessage = new String("W");
-String loseMessage = new String("L");
+public final static int NUM_BOMBS = NUM_ROWS*NUM_COLS/10;
+String winMessage = new String("Winner Winner Chicken Dinner!");
+String loseMessage = new String("You just took an L.");
 private MSButton[][] buttons; //2d array of minesweeper buttons
 private ArrayList <MSButton> bombs = new ArrayList <MSButton>(); //ArrayList of just the minesweeper buttons that are mined
 
@@ -138,8 +138,8 @@ public class MSButton
     {    
         if (marked)
             fill(0);
-        // else if( clicked && bombs.contains(this) ) 
-        //     fill(255,0,0);
+        else if( clicked && bombs.contains(this) ) 
+             fill(255,0,0);
         else if(clicked)
             fill( 200 );
         else 
